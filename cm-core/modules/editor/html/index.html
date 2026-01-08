@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM-Core Configuration Editor</title>
+    <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+    <div id="editor-panel" class="hidden">
+        <div class="editor-container">
+            <!-- Header -->
+            <div class="editor-header">
+                <h1>CM-Core Configuration Editor</h1>
+                <button class="close-btn" onclick="closeEditor()">×</button>
+            </div>
+
+            <!-- Navigation -->
+            <div class="editor-nav">
+                <button class="nav-btn active" onclick="switchEditor('items')">Items</button>
+                <button class="nav-btn" onclick="switchEditor('vehicles')">Vehicles</button>
+                <button class="nav-btn" onclick="switchEditor('jobs')">Jobs</button>
+                <button class="nav-btn" onclick="switchEditor('gangs')">Gangs</button>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="editor-toolbar">
+                <button class="btn btn-primary" onclick="showAddDialog()">
+                    <span>➕</span> Add New
+                </button>
+                <button class="btn btn-success" onclick="showImportDialog()">
+                    <span>📥</span> Import
+                </button>
+                <button class="btn btn-info" onclick="exportConfig()">
+                    <span>📤</span> Export
+                </button>
+                <input type="text" id="search-input" placeholder="Search..." oninput="filterEntries()">
+            </div>
+
+            <!-- Content -->
+            <div class="editor-content">
+                <!-- Items Editor -->
+                <div id="items-editor" class="editor-section active">
+                    <div class="entries-grid" id="items-grid">
+                        <!-- Items will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Vehicles Editor -->
+                <div id="vehicles-editor" class="editor-section">
+                    <div class="entries-grid" id="vehicles-grid">
+                        <!-- Vehicles will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Jobs Editor -->
+                <div id="jobs-editor" class="editor-section">
+                    <div class="entries-grid" id="jobs-grid">
+                        <!-- Jobs will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Gangs Editor -->
+                <div id="gangs-editor" class="editor-section">
+                    <div class="entries-grid" id="gangs-grid">
+                        <!-- Gangs will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit/Add Modal -->
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 id="modal-title">Edit Entry</h2>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            
+            <div class="modal-body" id="modal-form">
+                <!-- Form will be dynamically generated -->
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveEntry()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Modal -->
+    <div id="import-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Import Configuration</h2>
+                <button class="close-btn" onclick="closeImportModal()">×</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="import-options">
+                    <button class="btn btn-primary" onclick="importFromQBCore()">Import from QBCore</button>
+                    <button class="btn btn-primary" onclick="importFromJSON()">Import from JSON</button>
+                    <button class="btn btn-primary" onclick="importFromCSV()">Import from CSV</button>
+                </div>
+                
+                <textarea id="import-data" placeholder="Paste your data here..."></textarea>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeImportModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="processImport()">Import</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/editor.js"></script>
+</body>
+</html>

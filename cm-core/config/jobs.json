@@ -1,0 +1,38 @@
+{
+  "unemployed": {
+    "label": "Civilian",
+    "defaultDuty": true,
+    "grades": {
+      "0": {
+        "name": "Freelancer",
+        "payment": 10
+      }
+    }
+  },
+  "police": {
+    "label": "Police",
+    "defaultDuty": false,
+    "grades": {
+      "0": {
+        "name": "Cadet",
+        "payment": 50
+      },
+      "1": {
+        "name": "Officer",
+        "payment": 75
+      },
+      "2": {
+        "name": "Sergeant",
+        "payment": 100
+      },
+      "3": {
+        "name": "Lieutenant",
+        "payment": 125
+      },
+      "4": {
+        "name": "Chief",
+        "payment": 150
+      }
+    }
+  }
+}

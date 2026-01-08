@@ -11,6 +11,28 @@ Config.Core = {
 }
 
 -- ════════════════════════════════════════════════════════════
+-- IMAGE PATHS
+-- ════════════════════════════════════════════════════════════
+Config.Images = {
+    Resource = 'cm-images',  -- Name of the image resource
+    
+    -- Base paths
+    Items = 'nui://cm-images/items/',
+    Vehicles = 'nui://cm-images/vehicles/',
+    Jobs = 'nui://cm-images/jobs/',
+    Gangs = 'nui://cm-images/gangs/',
+    Weapons = 'nui://cm-images/weapons/',
+    Clothing = 'nui://cm-images/clothing/',
+    Misc = 'nui://cm-images/misc/',
+    
+    -- Default images
+    DefaultItem = 'nui://cm-images/misc/placeholder.png',
+    DefaultVehicle = 'nui://cm-images/misc/placeholder.png',
+    DefaultJob = 'nui://cm-images/misc/placeholder.png',
+    DefaultGang = 'nui://cm-images/misc/placeholder.png',
+}
+
+-- ════════════════════════════════════════════════════════════
 -- DATABASE SETTINGS
 -- ════════════════════════════════════════════════════════════
 Config.Database = {

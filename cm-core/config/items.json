@@ -1,0 +1,26 @@
+{
+  "water": {
+    "name": "water",
+    "label": "Water Bottle",
+    "weight": 500,
+    "type": "drink",
+    "image": "water.png",
+    "unique": false,
+    "useable": true,
+    "shouldClose": true,
+    "combinable": null,
+    "description": "A refreshing bottle of water"
+  },
+  "bread": {
+    "name": "bread",
+    "label": "Bread",
+    "weight": 200,
+    "type": "food",
+    "image": "bread.png",
+    "unique": false,
+    "useable": true,
+    "shouldClose": true,
+    "combinable": null,
+    "description": "A loaf of bread"
+  }
+}

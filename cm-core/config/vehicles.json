@@ -1,0 +1,22 @@
+{
+  "adder": {
+    "model": "adder",
+    "name": "Adder",
+    "brand": "Truffade",
+    "price": 1000000,
+    "category": "super",
+    "shop": "luxury",
+    "stock": -1,
+    "image": "adder.png"
+  },
+  "buffalo": {
+    "model": "buffalo",
+    "name": "Buffalo",
+    "brand": "Bravado",
+    "price": 35000,
+    "category": "sports",
+    "shop": "pdm",
+    "stock": -1,
+    "image": "buffalo.png"
+  }
+}

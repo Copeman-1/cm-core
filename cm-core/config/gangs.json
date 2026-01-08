@@ -1,0 +1,27 @@
+{
+  "none": {
+    "label": "No Gang",
+    "grades": {
+      "0": {
+        "name": "No Affiliation"
+      }
+    }
+  },
+  "ballas": {
+    "label": "Ballas",
+    "grades": {
+      "0": {
+        "name": "Recruit",
+        "payment": 25
+      },
+      "1": {
+        "name": "Member",
+        "payment": 50
+      },
+      "2": {
+        "name": "Leader",
+        "payment": 75
+      }
+    }
+  }
+}

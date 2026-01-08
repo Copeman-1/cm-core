@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: transparent;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#admin-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.panel-container {
+    width: 90%;
+    max-width: 1400px;
+    height: 85vh;
+    background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.panel-nav {
+    background: #252535;
+    padding: 15px 30px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #3b82f6;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #a0a0b0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.nav-btn.active {
+    background: #3b82f6;
+    color: white;
+}
+
+.panel-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 20px;
+    background: #2a2a3e;
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.player-card {
+    background: #2a2a3e;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.player-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.player-card h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.player-card p {
+    color: #a0a0b0;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.player-card .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 5px;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.bans-list,
+.logs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ban-item,
+.log-item {
+    background: #2a2a3e;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #ef4444;
+}
+
+.log-item {
+    border-left-color: #3b82f6;
+}
+
+.ban-item h4,
+.log-item h4 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.ban-item p,
+.log-item p {
+    color: #a0a0b0;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.ban-item button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #10b981;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ban-item button:hover {
+    background: #059669;
+}
+
+.server-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+}
+
+.stat-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.stat-card .stat-value {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-content {
+    background: #1e1e2e;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-header h2 {
+    color: white;
+    font-size: 20px;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.player-info {
+    background: #2a2a3e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.player-info p {
+    color: #a0a0b0;
+    margin: 8px 0;
+}
+
+.player-info strong {
+    color: white;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background: #3b82f6;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+.btn-success {
+    background: #10b981;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-warning {
+    background: #f59e0b;
+}
+
+.btn-warning:hover {
+    background: #d97706;
+}
+
+.btn-danger {
+    background: #ef4444;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.btn-info {
+    background: #06b6d4;
+}
+
+.btn-info:hover {
+    background: #0891b2;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}

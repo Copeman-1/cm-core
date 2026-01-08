@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM-Core Admin Panel</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div id="admin-panel" class="hidden">
+        <div class="panel-container">
+            <!-- Header -->
+            <div class="panel-header">
+                <h1>CM-Core Admin Panel</h1>
+                <button class="close-btn" onclick="closePanel()">×</button>
+            </div>
+
+            <!-- Navigation -->
+            <div class="panel-nav">
+                <button class="nav-btn active" onclick="switchTab('players')">Players</button>
+                <button class="nav-btn" onclick="switchTab('bans')">Bans</button>
+                <button class="nav-btn" onclick="switchTab('logs')">Logs</button>
+                <button class="nav-btn" onclick="switchTab('server')">Server</button>
+            </div>
+
+            <!-- Content -->
+            <div class="panel-content">
+                <!-- Players Tab -->
+                <div id="players-tab" class="tab-content active">
+                    <div class="search-bar">
+                        <input type="text" id="player-search" placeholder="Search players..." oninput="filterPlayers()">
+                    </div>
+                    
+                    <div class="players-grid" id="players-list">
+                        <!-- Players will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Bans Tab -->
+                <div id="bans-tab" class="tab-content">
+                    <div class="bans-list" id="bans-list">
+                        <!-- Bans will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Logs Tab -->
+                <div id="logs-tab" class="tab-content">
+                    <div class="logs-list" id="logs-list">
+                        <!-- Logs will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Server Tab -->
+                <div id="server-tab" class="tab-content">
+                    <div class="server-stats" id="server-stats">
+                        <!-- Server stats will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player Actions Modal -->
+    <div id="player-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-player-name">Player Actions</h2>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="player-info" id="player-info">
+                    <!-- Player info will be loaded here -->
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="teleportToPlayer()">Teleport To</button>
+                    <button class="btn btn-primary" onclick="bringPlayer()">Bring</button>
+                    <button class="btn btn-warning" onclick="spectatePlayer()">Spectate</button>
+                    <button class="btn btn-warning" onclick="freezePlayer()">Freeze</button>
+                    <button class="btn btn-success" onclick="revivePlayer()">Revive</button>
+                    <button class="btn btn-success" onclick="healPlayer()">Heal</button>
+                    <button class="btn btn-info" onclick="showWarnDialog()">Warn</button>
+                    <button class="btn btn-danger" onclick="showKickDialog()">Kick</button>
+                    <button class="btn btn-danger" onclick="showBanDialog()">Ban</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

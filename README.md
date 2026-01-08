@@ -181,7 +181,7 @@ COMING SOON
 
 ## 🙏 Credits
 
-Created by COpeman with passion for the FiveM community.
+Created by Copeman for the FiveM community.
 
 
 

@@ -1,4 +1,4 @@
-# W.I.P This Framework is stil in the very early stages
+# W.I.P This Framework is still in the very early stages
 
 A lightweight, high-performance FiveM framework built from the ground up with modern features and developer experience in mind.
 
